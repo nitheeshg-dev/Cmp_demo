@@ -18,12 +18,19 @@ import org.jetbrains.compose.resources.painterResource
 
 import cmp_demo.shared.generated.resources.Res
 import cmp_demo.shared.generated.resources.compose_multiplatform
+import nith.daily.cmp_demo.book.presentation.book_list.BookListScreenRoot
+import nith.daily.cmp_demo.book.presentation.book_list.BookListViewModel
 
 @Composable
 @Preview
 fun App() {
     MaterialTheme {
-        var showContent by remember { mutableStateOf(false) }
+
+        BookListScreenRoot(
+            viewModel = remember { BookListViewModel() },
+            {}
+        )
+        /*var showContent by remember { mutableStateOf(false) }
         Column(
             modifier = Modifier
                 .background(MaterialTheme.colorScheme.primaryContainer)
@@ -44,6 +51,6 @@ fun App() {
                     Text("Compose: $greeting")
                 }
             }
-        }
+        }*/
     }
 }

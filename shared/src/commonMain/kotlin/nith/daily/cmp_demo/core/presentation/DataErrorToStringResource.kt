@@ -1,14 +1,13 @@
-package com.plcoding.bookpedia.core.presentation
+package nith.daily.cmp_demo.core.presentation
 
-import cmp_bookpedia.composeapp.generated.resources.Res
-import cmp_bookpedia.composeapp.generated.resources.error_disk_full
-import cmp_bookpedia.composeapp.generated.resources.error_no_internet
-import cmp_bookpedia.composeapp.generated.resources.error_request_timeout
-import cmp_bookpedia.composeapp.generated.resources.error_serialization
-import cmp_bookpedia.composeapp.generated.resources.error_too_many_requests
-import cmp_bookpedia.composeapp.generated.resources.error_unknown
-import com.plcoding.bookpedia.core.domain.DataError
-import nith.daily.cmp_demo.core.presentation.UiText
+import cmp_demo.shared.generated.resources.Res
+import cmp_demo.shared.generated.resources.error_disk_full
+import cmp_demo.shared.generated.resources.error_no_internet
+import cmp_demo.shared.generated.resources.error_request_timeout
+import cmp_demo.shared.generated.resources.error_serialization
+import cmp_demo.shared.generated.resources.error_too_many_requests
+import cmp_demo.shared.generated.resources.error_unknown
+import nith.daily.cmp_demo.core.domin.DataError
 
 fun DataError.toUiText(): UiText {
     val stringRes = when(this) {

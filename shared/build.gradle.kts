@@ -54,6 +54,13 @@ kotlin {
             implementation(libs.ktor.client.okhttp)
             implementation(libs.koin.android)
             implementation(libs.koin.androidx.compose)
+            implementation(libs.androidx.room.runtime)
+            implementation(libs.coil.network.ktor3)
+        }
+        iosMain.dependencies {
+            implementation(libs.androidx.room.runtime)
+            implementation(libs.sqlite.bundled)
+            implementation(libs.coil.network.ktor3)
         }
         commonMain.dependencies {
             implementation(libs.compose.runtime)
@@ -64,14 +71,18 @@ kotlin {
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
-            implementation(libs.androidx.room.runtime)
-            implementation(libs.sqlite.bundled)
+            /*implementation(libs.androidx.room.runtime)
+            implementation(libs.sqlite.bundled)*/
             implementation(libs.koin.compose)
             implementation(libs.koin.compose.viewmodel)
             api(libs.koin.core)
-
+//            implementation(libs.compose.material.icons.extended)
+            implementation(libs.material.icons.extended)
             implementation(libs.bundles.ktor)
-            implementation(libs.bundles.coil)
+//            implementation(libs.bundles.coil)
+            implementation(libs.coil.compose)
+            implementation(libs.coil.compose.core)
+            implementation(libs.coil.mp)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

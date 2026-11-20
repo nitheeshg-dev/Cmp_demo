@@ -1,10 +1,22 @@
 package nith.daily.cmp_demo.book.presentation.book_list
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import nith.daily.cmp_demo.book.domain.Book
+import nith.daily.cmp_demo.book.presentation.book_list.components.BookSearchBar
+import nith.daily.cmp_demo.core.presentation.DarkBlue
 import org.koin.compose.viewmodel.koinViewModel
 
 
@@ -30,5 +42,18 @@ private fun BookListScreen(
     onAction: (BookListAction) -> Unit
 ) {
 
-
+    val keyboardController = LocalSoftwareKeyboardController.current
+    Column(modifier = Modifier.fillMaxSize().
+    background(DarkBlue).
+    statusBarsPadding(),
+        horizontalAlignment = Alignment.CenterHorizontally) {
+        BookSearchBar(state.searchQuery,
+            onSearchQueryChange = {
+                onAction(BookListAction.OnSearchQueryChange(it))
+            },
+            onImaSearch = {
+                keyboardController?.hide()
+            },
+            modifier = Modifier.widthIn(max = 400.dp).padding(16.dp))
+    }
 }

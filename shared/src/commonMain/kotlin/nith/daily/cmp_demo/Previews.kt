@@ -1,6 +1,7 @@
 package nith.daily.cmp_demo
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -13,13 +14,19 @@ import nith.daily.cmp_demo.book.presentation.book_list.components.BookSearchBar
 @Composable
 fun BookSearchBarPreview(){
     MaterialTheme{
-        BookSearchBar("Kotlin",
-            onSearchQueryChange = {
+        Box(modifier = Modifier.fillMaxWidth().
+        background(Color.White))
+        {
+            BookSearchBar(
+                "Kotlin",
+                onSearchQueryChange = {
 
-            },
-            onImaSearch = {
+                },
+                onImaSearch = {
 
-            },
-            modifier = Modifier.fillMaxWidth())
+                },
+                modifier = Modifier.fillMaxWidth()
+            )
+        }
     }
 }

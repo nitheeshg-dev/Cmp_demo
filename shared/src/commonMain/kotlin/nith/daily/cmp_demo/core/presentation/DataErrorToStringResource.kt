@@ -8,6 +8,7 @@ import cmp_bookpedia.composeapp.generated.resources.error_serialization
 import cmp_bookpedia.composeapp.generated.resources.error_too_many_requests
 import cmp_bookpedia.composeapp.generated.resources.error_unknown
 import com.plcoding.bookpedia.core.domain.DataError
+import nith.daily.cmp_demo.core.presentation.UiText
 
 fun DataError.toUiText(): UiText {
     val stringRes = when(this) {

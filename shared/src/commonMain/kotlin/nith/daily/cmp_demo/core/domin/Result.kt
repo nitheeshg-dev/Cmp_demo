@@ -1,9 +1,9 @@
-package nith.daily.cmp_demo.core.presentation.domin
+package nith.daily.cmp_demo.core.domin
 
 
 sealed interface Result<out D, out E: Error> {
     data class Success<out D>(val data: D): Result<D, Nothing>
-    data class Error<out E: nith.daily.cmp_demo.core.presentation.domin.Error>(val error: E):
+    data class Error<out E: nith.daily.cmp_demo.core.domin.Error>(val error: E):
         Result<Nothing, E>
 }
 

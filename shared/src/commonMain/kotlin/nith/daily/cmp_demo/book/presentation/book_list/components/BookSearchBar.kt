@@ -34,7 +34,7 @@ import org.jetbrains.compose.resources.stringResource
 fun BookSearchBar(
     searchQuery:String,
     onSearchQueryChange: (String)-> Unit,
-    onImaSearch: () -> Unit,
+    onImeSearch: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     CompositionLocalProvider(
@@ -62,7 +62,7 @@ fun BookSearchBar(
             },
             singleLine = true,
             keyboardActions = KeyboardActions(onSearch = {
-                onImaSearch()
+                onImeSearch()
             }),
             keyboardOptions = KeyboardOptions(
                 keyboardType = KeyboardType.Text
